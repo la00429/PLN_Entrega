@@ -1,0 +1,11 @@
+
+El procesamiento de lenguaje natural estudia como las computadoras interactuan con el lenguaje humano.
+Es una rama de la inteligencia artificial con aplicaciones en traductores, chatbots y buscadores.
+
+La tokenizacion divide el texto en unidades minimas llamadas tokens.
+Cada token puede ser una palabra, un simbolo o un numero.
+Este proceso es el primer paso en casi todo pipeline de PLN.
+
+Los modelos de lenguaje aprenden patrones estadisticos del texto.
+Con suficientes datos pueden predecir palabras, clasificar documentos y responder preguntas.
+Los transformers son actualmente la arquitectura mas utilizada.
