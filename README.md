@@ -16,9 +16,6 @@
 - Formato: archivo de texto plano `.txt`, preferible en `UTF-8` (si no, `latin-1` se intenta leer). Evitar archivos binarios o con mezclas de codificación.
 - Estructura: una oración por línea o párrafos separados por líneas en blanco facilitan la tokenización; los saltos de línea y puntuación se manejan en los scripts.
 - Tamaño mínimo para prácticas (conteo, hapax, visualización simple): 500–1.000 palabras (~1 KB) es suficiente para un ejercicio demostrativo.
-- Tamaño recomendado para embeddings por SVD (train_embeddings_svd.py): al menos 500–2.000 oraciones (varios miles de tokens). La SVD usa memoria O(V^2) en la matriz de coocurrencia, por lo que vocabularios muy grandes (>5.000 palabras) pueden consumir mucha memoria.
-- Tamaño recomendado para Word2Vec (si decides usar `gensim`): idealmente decenas o cientos de miles de tokens; para resultados útiles busque >100k tokens (mejor: millones para modelos de calidad).
-- Consejo práctico: si tu corpus es pequeño, el resultado de los embeddings será ruidoso pero útil para aprendizaje; para experimentos reproducibles usa un corpus con al menos algunas decenas de miles de tokens.
 
 ## Sobre el ejecutable
 
@@ -38,8 +35,6 @@
 - Para el ejercicio de conteo y exploración: 500–1.000 palabras (pequeño corpus) suficientes para prácticas.
 - Para obtener embeddings SVD con cierta estabilidad: miles de oraciones (500–2.000 oraciones o varios miles de tokens).
 - Para modelos Word2Vec útiles en tareas reales: busque al menos 100k tokens; para calidad óptima, millones de tokens.
-
-Si quieres, puedo generar aquí el `.exe` que incluya el modelo entrenado usando el `corpus.txt` de ejemplo (reconstruiré `models/` y ejecutaré PyInstaller). ¿Lo ejecuto ahora? 
 
 ## Cómo ejecutar (Windows, PowerShell)
 
@@ -76,8 +71,3 @@ pyinstaller --onefile --windowed --add-data "models;models" txt_counter_gui.py
 ```
 
 El ejecutable quedará en `dist\txt_counter_gui.exe`.
-
-## Notas
-
-- El entregable está pensado para tareas educativas de PLN: conteo, hapax, tokens y un pipeline de embeddings básico.
-- Para modelos de producción o embeddings de alta calidad usa corpora mucho más grandes y herramientas especializadas (`gensim`, `fasttext`, modelos preentrenados).
